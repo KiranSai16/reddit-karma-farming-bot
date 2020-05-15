@@ -141,7 +141,7 @@ def get_submissions(start_date, end_date, sub):
 
 
 @lru_cache(timeout=DAY,maxsize = MAX_CACHE_SIZE)
-def get_top_subreddits(min_subscribers=500000):
+def get_top_subreddits(min_subscribers=5000):
     """Scraper for redditlist.com.
     Retrieves top subreddits with at least `min_subscribers`.
 
@@ -376,7 +376,7 @@ def random_reply():
 #           return
         if prob(.35):  # There's a larger chance that we'll reply to a comment.
             log.info("replying to a comment")
-            comment = random.choice(submission.comments.list())
+            comment = random.choice(submission.comments.list())            
             response = reply_brain.reply(comment.body)
             
             # We might not be able to learn enough from the subreddit to reply
@@ -384,10 +384,10 @@ def random_reply():
             if "I don't know enough to answer you yet!" in response:
               log.info("I don't know enough from {}, using main brain db to reply".format(sub_name))
               brain = "{}/{}.db".format(DB_DIR, "brain")
-              reply_brain = bot.Brain(brain)
+              reply_brain = bot.Brain(brain)              
               response = reply_brain.reply(comment.body)
                 
-            resposne = "The best Amazon Prime Offers on Shoes for May-2020 are here. Get the latest trendy shoes right here. https://www.reviewscholar.com/best-amazon-prime-sneakers-shoes-deals/"
+            response = "The best Amazon Prime Offers on Shoes for May-2020 are here. Get the latest trendy shoes right here. https://www.reviewscholar.com/best-amazon-prime-sneakers-shoes-deals/"
             reply = comment.reply(response)
             log.info("Replied to comment: {}".format(comment.body))
             log.info("Replied with: {}".format(response))
