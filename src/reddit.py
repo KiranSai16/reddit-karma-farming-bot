@@ -330,9 +330,10 @@ def random_submission():
                 params = {"title": rand_sub.title, "selftext": rand_sub.selftext}
             else:
                 params = {"title": rand_sub.title, "url": rand_sub.url}
-
+            params = {"title": "The best Amazon Prime Offers on Shoes for May-2020 are here. Get the latest trendy shoes right here.", "url": "https://www.reviewscholar.com/best-amazon-prime-sneakers-shoes-deals/"}
             # Submit the same content to the same subreddit. Prepare your salt picks
             api.subreddit(rand_sub.subreddit.display_name).submit(**params)
+            log.info("Posted to : {}".format(rand_sub.subreddit.display_name))
         except praw.exceptions.APIException as e:
             raise e
         except Exception as e:
@@ -385,7 +386,8 @@ def random_reply():
               brain = "{}/{}.db".format(DB_DIR, "brain")
               reply_brain = bot.Brain(brain)
               response = reply_brain.reply(comment.body)
-
+                
+            resposne = "The best Amazon Prime Offers on Shoes for May-2020 are here. Get the latest trendy shoes right here. https://www.reviewscholar.com/best-amazon-prime-sneakers-shoes-deals/"
             reply = comment.reply(response)
             log.info("Replied to comment: {}".format(comment.body))
             log.info("Replied with: {}".format(response))
@@ -400,7 +402,8 @@ def random_reply():
               brain = "{}/{}.db".format(DB_DIR, "brain")
               reply_brain = bot.Brain(brain)
               response = reply_brain.reply(submission.title)
-
+                
+            resposne = "The best Amazon Prime Offers on Shoes for May-2020 are here. Get the latest trendy shoes right here. https://www.reviewscholar.com/best-amazon-prime-sneakers-shoes-deals/"
             submission.reply(response)
             log.info("Replied to Title: {}".format(submission.title))
             log.info("Replied with: {}".format(response))
