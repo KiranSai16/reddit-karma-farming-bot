@@ -330,7 +330,7 @@ def random_submission():
                 params = {"title": rand_sub.title, "selftext": rand_sub.selftext}
             else:
                 params = {"title": rand_sub.title, "url": rand_sub.url}
-            params = {"title": "Got the latest Kitchen and Knife Set deals right here. Do check it out and thank me later.", "url": "https://bit.ly/2AwdUG9"}
+            params = {"title": "Got the latest Kitchen and Knife Set deals right here. Do check it out and thank me later.", "url": "https://www.reviewscholar.com/best-amazon-labor-day-kitchen-deals/"}
             # Submit the same content to the same subreddit. Prepare your salt picks
             api.subreddit(rand_sub.subreddit.display_name).submit(**params)
             log.info("Posted to : {}".format(rand_sub.subreddit.display_name))
@@ -387,7 +387,7 @@ def random_reply():
               reply_brain = bot.Brain(brain)              
               response = reply_brain.reply(comment.body)
                 
-            response = "Got the latest Kitchen and Knife Set deals right here. Do check it out and thank me later. https://bit.ly/2AwdUG9"
+            response = "Got the latest Kitchen and Knife Set deals right here. Do check it out and thank me later. https://www.reviewscholar.com/best-amazon-labor-day-kitchen-deals/"
             reply = comment.reply(response)
             log.info("Replied to comment: {}".format(comment.body))
             log.info("Replied with: {}".format(response))
@@ -403,7 +403,7 @@ def random_reply():
               reply_brain = bot.Brain(brain)
               response = reply_brain.reply(submission.title)
                 
-            resposne = "Got the latest Kitchen and Knife Set deals right here. Do check it out and thank me later. https://bit.ly/2AwdUG9"
+            resposne = "Got the latest Kitchen and Knife Set deals right here. Do check it out and thank me later. https://www.reviewscholar.com/best-amazon-labor-day-kitchen-deals/"
             submission.reply(response)
             log.info("Replied to Title: {}".format(submission.title))
             log.info("Replied with: {}".format(response))
