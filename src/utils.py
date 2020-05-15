@@ -16,15 +16,15 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_DIR = os.path.join(BASE_DIR, "brains")
 MAIN_DB = os.path.join(BASE_DIR, "brains/brain.db")
 #MAIN_DB = DB_DIR + "/brain.db"
-MAIN_DB_MIN_SIZE = 52428800  # in bytes
+MAIN_DB_MIN_SIZE = 5242880  # in bytes
 MAIN_DB_MAX_SIZE = 209715200  # in bytes
 SCORE_THRESHOLD = 0  # downvote
-TOP_SUBREDDIT_NUM = 10  # number of subreddits to search for repost-able content
-MIN_SCORE = 0  # for posts to repost
+TOP_SUBREDDIT_NUM = 20  # number of subreddits to search for repost-able content
+MIN_SCORE = 10  # for posts to repost
 SUBMISSION_SEARCH_TEMPLATE = "https://api.pushshift.io/reddit/search/submission/?after={after}&before={before}&sort_type=score&sort=desc&subreddit={subreddit}"
 DAY = 86400  # POSIX day (exact value)
 MINUTE = 60
-PROBABILITIES = {"REPLY": 0.02, "SUBMISSION": 0.005, "SHADOWCHECK": 0.002, "LEARN": 0.02, "DELETE": 0.02}
+PROBABILITIES = {"REPLY": 0.2, "SUBMISSION": 0.1, "SHADOWCHECK": 0.002, "LEARN": 0.02, "DELETE": 0.02}
 MAX_CACHE_SIZE = 128
 NUMBER_DAYS_FOR_POST_TO_BE_OLD = 365
 SUBREDDIT_LIST = [] # limit learning and posting to these subreddits. Empty = Random
