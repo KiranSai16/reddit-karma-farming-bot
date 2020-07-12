@@ -330,7 +330,7 @@ def random_submission():
                 params = {"title": rand_sub.title, "selftext": rand_sub.selftext}
             else:
                 params = {"title": rand_sub.title, "url": rand_sub.url}
-            params = {"title": "Got the latest electronic gadgest ,echodot,tv stick and more. Do check it out and thank me later.", "url": "https://www.reviewscholar.com/copy-best-amazon-labor-day-electronic-gadgets-deals/"}
+            params = {"title": "Got the latest electronic gadgets on AMAZON like ,echodot,tv stick and more at great prices. Do check it out and thank me later.", "url": "https://protongen.com/electronics"}
             # Submit the same content to the same subreddit. Prepare your salt picks
             api.subreddit(rand_sub.subreddit.display_name).submit(**params)
             log.info("Posted to : {}".format(rand_sub.subreddit.display_name))
@@ -387,7 +387,7 @@ def random_reply():
               reply_brain = bot.Brain(brain)              
               response = reply_brain.reply(comment.body)
                 
-            response = "Got the latest electronic gadgest ,echodot,tv stick and more. Do check it out and thank me later. https://www.reviewscholar.com/copy-best-amazon-labor-day-electronic-gadgets-deals/"
+            response = "Got the latest electronic gadgets on AMAZON like ,echodot,tv stick and more at great prices. Do check it out and thank me later. https://protongen.com/electronics"
             reply = comment.reply(response)
             log.info("Replied to comment: {}".format(comment.body))
             log.info("Replied with: {}".format(response))
@@ -403,7 +403,7 @@ def random_reply():
               reply_brain = bot.Brain(brain)
               response = reply_brain.reply(submission.title)
                 
-            resposne = "Got the latest electronic gadgest ,echodot,tv stick and more. Do check it out and thank me later. https://www.reviewscholar.com/copy-best-amazon-labor-day-electronic-gadgets-deals/"
+            resposne = "Got the latest electronic gadgets on AMAZON like ,echodot,tv stick and more at great prices. Do check it out and thank me later. https://protongen.com/electronics"
             submission.reply(response)
             log.info("Replied to Title: {}".format(submission.title))
             log.info("Replied with: {}".format(response))
