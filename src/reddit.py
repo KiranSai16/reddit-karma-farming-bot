@@ -387,7 +387,7 @@ def random_reply():
               reply_brain = bot.Brain(brain)              
               response = reply_brain.reply(comment.body)
                 
-            response = "Got the latest trendy Sneakers from AMAZON right here. Do check it out and thank me later. https://www.reviewscholar.com/best-amazon-prime-sneakers-shoes-deals/"
+            response = "Got the latest trendy Sneakers from AMAZON right here. Do check it out and thank me later. https://protongen.com/shoes"
             reply = comment.reply(response)
             log.info("Replied to comment: {}".format(comment.body))
             log.info("Replied with: {}".format(response))
